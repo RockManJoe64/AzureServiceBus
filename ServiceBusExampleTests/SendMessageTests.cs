@@ -15,8 +15,6 @@ namespace ServiceBusExampleTests
     {
         private const uint MAX_DATA_COUNT = 1024;
 
-        // private const string URL = "https://servicebusexample20190711025904.azurewebsites.net/api/sendmessage";
-
         private const string URL = "http://localhost:7071/api/sendmessage";
 
         private HttpClient httpClient;

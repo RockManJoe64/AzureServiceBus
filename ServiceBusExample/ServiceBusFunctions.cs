@@ -14,12 +14,10 @@ namespace ServiceBusExample
 
         [FunctionName("GetMessage")]
         public void GetMessage(
-            [ServiceBusTrigger(QUEUE_NAME, Connection = "ServiceBusConnection")] Message queuedMessage, 
+            [ServiceBusTrigger(QUEUE_NAME, Connection = "ServiceBusConnection")] string queuedMessage, 
             ILogger log)
-        {
-            var jsonPayload = Encoding.UTF8.GetString(queuedMessage.Body);
-
-            log.LogInformation($"C# ServiceBus queue trigger function processed message: {jsonPayload}");
+        { 
+            log.LogInformation($"C# ServiceBus queue trigger function processed message: {queuedMessage}");
         }
     }
 }
